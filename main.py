@@ -8,8 +8,10 @@ for i in range(4):
     name = input(f'{ru.NAME} {i+1}->')
     names.append(name)
 
+health = 3
+force = 5
 print(ru.INITIAL_INFO)
-print(f'{ru.RESOURCES}:\n{ru.HEALTH} 3\n{ru.FORCE} 5')
+print(f'{ru.RESOURCES}:\n{ru.HEALTH} {health}\n{ru.FORCE} {force}')
 
 act1 = []
 for i in names:
