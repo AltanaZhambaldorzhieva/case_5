@@ -57,7 +57,7 @@ def floor_1():
     return force
 
 
-def floor2():
+def floor_2():
     health = 3
     force = 5
     for k in names:
