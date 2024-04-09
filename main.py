@@ -18,45 +18,51 @@ for i in names:
     action1 = int(input(f'{ru.ACT}->'))
     act1.append(action1)
 
+
+def random_granny():
+    rand_granny = random.choice([1, 2])
+    return rand_granny
+
+
 def floor2():
     health = 3
     force = 5
     print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.ENTER}')
     act = int(input(f'{ru.ACT}->'))
     if act == 1:
-        if def random_granny() == 2:
+        if random_granny() == 2:
             print(f'{ru.OH_OH}')
             health -= 1
             force -= 2
         print(f'{ru.CHOOSE}:\n1.{ru.GO_TO_ROOM_1}\n2.{ru.GO_TO_ROOM_2}')
-        act1 = int(input(f'{ru.ACT}->'))
-        if act1 == 1:
+        act_1 = int(input(f'{ru.ACT}->'))
+        if act_1 == 1:
             print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_FRIDGE}')
-            act2 = int(input(f'{ru.ACT}->'))
-            if act2 == 1:
-                print(f'{ru.EMPTY}')
+            act_2 = int(input(f'{ru.ACT}->'))
+            if act_2 == 1:
+                print(ru.EMPTY)
             else:
-                print(f'{ru.SPRAY}')
+                print(ru.SPRAY)
         else:
-            print(f'{ru.EMPTY})
-        print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_1})
-        act3 = int(input(f'{ru.ACT}->'))
-        if act3 == 1:
-            if def random_granny() == 2:
-            print(f'{ru.OH_OH}')
-            health -= 1
-            force -= 2
+            print(ru.EMPTY)
+        print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_1}')
+        act_3 = int(input(f'{ru.ACT}->'))
+        if act_3 == 1:
+            if random_granny() == 2:
+                print(f'{ru.OH_OH}')
+                health -= 1
+                force -= 2
             print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_3}')
-            act4 = int(input(f'{ru.ACT}->'))
-            if act4 == 1:
-                if def random_granny() == 2:
+            act_4 = int(input(f'{ru.ACT}->'))
+            if act_4 == 1:
+                if random_granny() == 2:
                     print(f'{ru.OH_OH}')
                     health -= 1
                     force -= 2
             else:
                 print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
-                act5 = int(input(f'{ru.ACT}->'))
-                if act5 == 1:
+                act_5 = int(input(f'{ru.ACT}->'))
+                if act_5 == 1:
                     print(f'{ru.MEDICINE}')
                     health += 1
                     if health > 3:
@@ -65,15 +71,15 @@ def floor2():
                     print(f'{ru.EMPTY}')
         else:
             print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_FRIDGE}')
-            act2 = int(input(f'{ru.ACT}->'))
-            if act2 == 1:
+            act_2 = int(input(f'{ru.ACT}->'))
+            if act_2 == 1:
                 print(f'{ru.EMPTY}')
             else:
                 print(f'{ru.SPRAY}')
     else:
         print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
-        act5 = int(input(f'{ru.ACT}->'))
-        if act5 == 1:
+        act_5 = int(input(f'{ru.ACT}->'))
+        if act_5 == 1:
             print(f'{ru.MEDICINE}')
             health += 1
             if health > 3:
@@ -81,16 +87,11 @@ def floor2():
     return health, force
 
 
-def random_granny():
-    rand_granny = random.choice([1, 2])
-    return rand_granny
-
 def floor_1():
     health = 3
     force = 5
-    names = []
-    for i in names:
-        print(f'{i}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}')
+    for j in names:
+        print(f'{j}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}')
         act_1 = int(input(f'{ru.ACT}->'))
         if act_1 == 1:
             print(f'{ru.KITCHEN_PL} {ru.CHOOSE}:\n1.{ru.OPEN_FRIDGE}\n2.{ru.OPEN_WARDROBE}')
@@ -112,5 +113,3 @@ def floor_1():
                       f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             else:
                 print(f'{ru.GRANNY_GOD}')
-
-
