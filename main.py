@@ -84,13 +84,21 @@ def floor_1():
             act_2 = int(input(f'{ru.ACT}->'))
             if act_2 == 1:
                 print(f'{ru.EAT}')
-                if health < 3:
-                    health += 1
-                    print()
+                if force < 5:
+                    force += 1
                 else:
-                    health = 3
+                    force = 5
             else:
-                print(f'{ru.EMPTY}')
+                print(f'{ru.EMPTY}\n{ru.RETURN}\n1.{ru.GO}\n2.{ru.EXIT}')
+                act_3 = int(input(f'{ru.ACT}->'))
+                if act_3 == 1:
+                    if random_granny() == 1:
+                        health -= 1
+                        force -= 2
+                        print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                              f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                    else:
+                        print(f'{ru.CLOSE_DOOR}')
         elif act_1 == 2:
             if random_granny() == 1:
                 health -= 1
@@ -100,10 +108,11 @@ def floor_1():
             else:
                 print(f'{ru.GRANNY_GOD}')
         else:
-            if key == 1:
-                print(f'{ru.OPEN_DOOR}')
-            else:
-                print(f'{ru.CLOSE_DOOR}')
+            print(f'{ru.CLOSE_DOOR}')
+    return force
+
+
+
 
 
 names = []
