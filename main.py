@@ -84,3 +84,32 @@ def floor2():
 def random_granny():
     rand_granny = random.choice([1, 2])
     return rand_granny
+
+def floor_1():
+    health = 3
+    force = 5
+    names = []
+    for i in names:
+        print(f'{i}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}')
+        act_1 = int(input(f'{ru.ACT}->'))
+        if act_1 == 1:
+            print(f'{ru.KITCHEN_PL} {ru.CHOOSE}:\n1.{ru.OPEN_FRIDGE}\n2.{ru.OPEN_WARDROBE}')
+            act_2 = int(input(f'{ru.ACT}->'))
+            if act_2 == 1:
+                print(f'{ru.EAT}')
+                if health < 3:
+                    health += 1
+                    print()
+                else:
+                    health = 3
+            else:
+                print(f'{ru.EMPTY}')
+        else:
+            if random_granny() == 1:
+                health -= 1
+                force -= 2
+                print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}: '
+                      f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+            else:
+
+
