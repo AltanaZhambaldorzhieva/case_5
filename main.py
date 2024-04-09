@@ -10,6 +10,53 @@ def random_granny():
     return rand_granny
 
 
+def floor_1():
+    health = 3
+    force = 5
+    for j in names:
+        print(f'{j}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}\n3.{ru.EXIT}')
+        act_1 = int(input(f'{ru.ACT}->'))
+        if act_1 == 1:
+            print(f'{ru.KITCHEN_PL} {ru.CHOOSE}:\n1.{ru.OPEN_FRIDGE}\n2.{ru.OPEN_WARDROBE}')
+            act_2 = int(input(f'{ru.ACT}->'))
+            if act_2 == 1:
+                print(f'{ru.EAT}')
+                if force < 5:
+                    force += 1
+                else:
+                    force = 5
+            else:
+                print(f'{ru.EMPTY}\n{ru.RETURN}\n1.{ru.GO}\n2.{ru.EXIT}')
+                act_3 = int(input(f'{ru.ACT}->'))
+                if act_3 == 1:
+                    if random_granny() == 1:
+                        health -= 1
+                        force -= 2
+                        if health == 0:
+                            print(f'{ru.DEATH}')
+                            exit()
+                        else:
+                            print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                                  f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                    else:
+                        print(f'{ru.CLOSE_DOOR}')
+        elif act_1 == 2:
+            if random_granny() == 1:
+                health -= 1
+                force -= 2
+                if health == 0:
+                    print(f'{ru.DEATH}')
+                    exit()
+                else:
+                    print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                          f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+            else:
+                print(f'{ru.GRANNY_GOD}')
+        else:
+            print(f'{ru.CLOSE_DOOR}')
+    return force
+
+
 def floor_2():
     health = 3
     force = 5
@@ -71,53 +118,6 @@ def floor_2():
                 health += 1
                 if health > 3:
                     health = 3
-    return force
-
-
-def floor_1():
-    health = 3
-    force = 5
-    for j in names:
-        print(f'{j}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}\n3.{ru.EXIT}')
-        act_1 = int(input(f'{ru.ACT}->'))
-        if act_1 == 1:
-            print(f'{ru.KITCHEN_PL} {ru.CHOOSE}:\n1.{ru.OPEN_FRIDGE}\n2.{ru.OPEN_WARDROBE}')
-            act_2 = int(input(f'{ru.ACT}->'))
-            if act_2 == 1:
-                print(f'{ru.EAT}')
-                if force < 5:
-                    force += 1
-                else:
-                    force = 5
-            else:
-                print(f'{ru.EMPTY}\n{ru.RETURN}\n1.{ru.GO}\n2.{ru.EXIT}')
-                act_3 = int(input(f'{ru.ACT}->'))
-                if act_3 == 1:
-                    if random_granny() == 1:
-                        health -= 1
-                        force -= 2
-                        if health == 0:
-                            print(f'{ru.DEATH}')
-                            exit()
-                        else:
-                            print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                                  f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
-                    else:
-                        print(f'{ru.CLOSE_DOOR}')
-        elif act_1 == 2:
-            if random_granny() == 1:
-                health -= 1
-                force -= 2
-                if health == 0:
-                    print(f'{ru.DEATH}')
-                    exit()
-                else:
-                    print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                          f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
-            else:
-                print(f'{ru.GRANNY_GOD}')
-        else:
-            print(f'{ru.CLOSE_DOOR}')
     return force
 
 
