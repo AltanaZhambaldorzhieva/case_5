@@ -24,6 +24,10 @@ def floor2():
     print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.ENTER}')
     act = int(input(f'{ru.ACT}->'))
     if act == 1:
+        if def random_granny() == 2:
+            print(f'{ru.OH_OH}')
+            health -= 1
+            force -= 2
         print(f'{ru.CHOOSE}:\n1.{ru.GO_TO_ROOM_1}\n2.{ru.GO_TO_ROOM_2}')
         act1 = int(input(f'{ru.ACT}->'))
         if act1 == 1:
@@ -35,6 +39,46 @@ def floor2():
                 print(f'{ru.SPRAY}')
         else:
             print(f'{ru.EMPTY})
+        print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_1})
+        act3 = int(input(f'{ru.ACT}->'))
+        if act3 == 1:
+            if def random_granny() == 2:
+            print(f'{ru.OH_OH}')
+            health -= 1
+            force -= 2
+            print(f'{ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_3}')
+            act4 = int(input(f'{ru.ACT}->'))
+            if act4 == 1:
+                if def random_granny() == 2:
+                    print(f'{ru.OH_OH}')
+                    health -= 1
+                    force -= 2
+            else:
+                print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
+                act5 = int(input(f'{ru.ACT}->'))
+                if act5 == 1:
+                    print(f'{ru.MEDICINE}')
+                    health += 1
+                    if health > 3:
+                        health = 3
+                else:
+                    print(f'{ru.EMPTY}')
+        else:
+            print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_FRIDGE}')
+            act2 = int(input(f'{ru.ACT}->'))
+            if act2 == 1:
+                print(f'{ru.EMPTY}')
+            else:
+                print(f'{ru.SPRAY}')
+    else:
+        print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
+        act5 = int(input(f'{ru.ACT}->'))
+        if act5 == 1:
+            print(f'{ru.MEDICINE}')
+            health += 1
+            if health > 3:
+                health = 3
+    return health, force
 
 
 def random_granny():
