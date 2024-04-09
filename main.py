@@ -22,9 +22,10 @@ for i in names:
 
 
 def random_granny():
-    random_granny = random.choice([0, 1])
-    if random_granny == 0:
-        print('')
+    rand_granny = random.choice([1, 2])
+    return rand_granny
+
+
 
 
 
