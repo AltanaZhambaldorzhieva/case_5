@@ -4,20 +4,6 @@
 import ru_local as ru
 import random
 
-names = []
-for i in range(4):
-    name = input(f'{ru.NAME} {i+1}->')
-    names.append(name)
-
-print(ru.INITIAL_INFO)
-print(f'{ru.RESOURCES}:\n{ru.HEALTH} 3\n{ru.FORCE} 5')
-
-act1 = []
-for i in names:
-    print(f'{i}, {ru.CHOOSE}:\n1.{ru.DOWN}\n2.{ru.GO}\n3.{ru.ENTER}')
-    action1 = int(input(f'{ru.ACT}->'))
-    act1.append(action1)
-
 
 def random_granny():
     rand_granny = random.choice([1, 2])
@@ -84,7 +70,7 @@ def floor2():
             health += 1
             if health > 3:
                 health = 3
-    return health, force
+    return force
 
 
 def floor_1():
@@ -118,3 +104,32 @@ def floor_1():
                 print(f'{ru.OPEN_DOOR}')
             else:
                 print(f'{ru.CLOSE_DOOR}')
+
+
+names = []
+for i in range(4):
+    name = input(f'{ru.NAME} {i+1}->')
+    names.append(name)
+
+print(ru.INITIAL_INFO)
+print(f'{ru.RESOURCES}:\n{ru.HEALTH} 3\n{ru.FORCE} 5')
+
+act1 = []
+for i in names:
+    print(f'{i}, {ru.CHOOSE}:\n1.{ru.DOWN}\n2.{ru.GO}\n3.{ru.ENTER}')
+    action1 = int(input(f'{ru.ACT}->'))
+    act1.append(action1)
+
+for i in act1:
+    if i == 1:
+        if floor_1() >= random.Random(5):
+            print('Вы победили')
+        else:
+            print('лох')
+    else:
+        if floor2() >= random.randint(0, 5):
+            print(ru.CONTINGENCY)
+            print('Вы победили')
+        else:
+            print(ru.CONTINGENCY)
+            print('лох')
