@@ -91,7 +91,7 @@ def floor_1():
     health = 3
     force = 5
     for j in names:
-        print(f'{j}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}')
+        print(f'{j}, {ru.CHOOSE}:\n1.{ru.KITCHEN}\n2.{ru.GO}\n3.{ru.EXIT}')
         act_1 = int(input(f'{ru.ACT}->'))
         if act_1 == 1:
             print(f'{ru.KITCHEN_PL} {ru.CHOOSE}:\n1.{ru.OPEN_FRIDGE}\n2.{ru.OPEN_WARDROBE}')
@@ -105,11 +105,16 @@ def floor_1():
                     health = 3
             else:
                 print(f'{ru.EMPTY}')
-        else:
+        elif act_1 == 2:
             if random_granny() == 1:
                 health -= 1
                 force -= 2
-                print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}: '
+                print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
                       f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             else:
                 print(f'{ru.GRANNY_GOD}')
+        else:
+            if key == 1:
+                print(f'{ru.OPEN_DOOR}')
+            else:
+                print(f'{ru.CLOSE_DOOR}')
