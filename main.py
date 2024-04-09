@@ -6,11 +6,17 @@ import random
 
 
 def random_granny():
+    """
+        The function returns random generation of granny location floor
+    """
     rand_granny = random.choice([1, 2])
     return rand_granny
 
 
 def floor_1():
+    """
+        The function returns the amount of remaining force on the first floor
+    """
     health = 3
     force = 5
     for j in names:
@@ -23,8 +29,10 @@ def floor_1():
                 print(f'{ru.EAT}')
                 if force < 5:
                     force += 1
+                    print(f'{ru.FORCE}: {force}')
                 else:
                     force = 5
+                    print(f'{ru.FORCE}: {force}')
             else:
                 print(f'{ru.EMPTY}\n{ru.RETURN}\n1.{ru.GO}\n2.{ru.EXIT}')
                 act_3 = int(input(f'{ru.ACT}->'))
@@ -39,7 +47,26 @@ def floor_1():
                             print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
                                   f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
                     else:
-                        print(f'{ru.CLOSE_DOOR}')
+                        print(f'{ru.GRANNY_GOD}\n{ru.RESOURCES}'
+                              f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                else:
+                    print(f'{ru.CLOSE_DOOR}\n{ru.RETURN}\n1.{ru.KITCHEN}\n2.{ru.GO}')
+                    act_4 = int(input(f'{ru.ACT}->'))
+                    if act_4 == 1:
+                        print(f'{ru.BEEN}')
+                    else:
+                        if random_granny() == 1:
+                            health -= 1
+                            force -= 2
+                            if health == 0:
+                                print(f'{ru.DEATH}')
+                                exit()
+                            else:
+                                print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                                      f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                        else:
+                            print(f'{ru.GRANNY_GOD}\n{ru.RESOURCES}'
+                                  f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
         elif act_1 == 2:
             if random_granny() == 1:
                 health -= 1
@@ -51,7 +78,8 @@ def floor_1():
                     print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
                           f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             else:
-                print(f'{ru.GRANNY_GOD}')
+                print(f'{ru.GRANNY_GOD}\n{ru.RESOURCES}'
+                      f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
         else:
             print(f'{ru.CLOSE_DOOR}')
     return force
