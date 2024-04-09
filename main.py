@@ -58,6 +58,9 @@ def floor_1():
 
 
 def floor_2():
+    """
+        The function returns the amount of remaining force on the second floor.
+    """
     health = 3
     force = 5
     for k in names:
