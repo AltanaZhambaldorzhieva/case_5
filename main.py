@@ -2,6 +2,7 @@
 # Developers: Zhambaldorzhieva A., Ryaguzova D., Zaitseva D.
 #
 import ru_local as ru
+import random
 
 names = []
 for i in range(4):
@@ -18,3 +19,13 @@ for i in names:
     print(f'{i}, {ru.CHOOSE}:\n1.{ru.DOWN}\n2.{ru.GO}\n3.{ru.ENTER}')
     action1 = int(input(f'{ru.ACT}->'))
     act1.append(action1)
+
+
+def random_granny():
+    rndm_grn = random.choice([1, 2])
+    return rndm_grn
+
+
+
+
+
