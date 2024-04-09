@@ -111,6 +111,6 @@ def floor_1():
                 print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}: '
                       f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             else:
-                print()
+                print(f'{ru.GRANNY_GOD}')
 
 
