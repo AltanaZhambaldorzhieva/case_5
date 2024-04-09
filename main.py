@@ -96,16 +96,24 @@ def floor_1():
                     if random_granny() == 1:
                         health -= 1
                         force -= 2
-                        print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                              f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                        if health == 0:
+                            print(f'{ru.DEATH}')
+                            exit()
+                        else:
+                            print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                                  f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
                     else:
                         print(f'{ru.CLOSE_DOOR}')
         elif act_1 == 2:
             if random_granny() == 1:
                 health -= 1
                 force -= 2
-                print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                      f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                if health == 0:
+                    print(f'{ru.DEATH}')
+                    exit()
+                else:
+                    print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                          f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             else:
                 print(f'{ru.GRANNY_GOD}')
         else:
