@@ -9,10 +9,8 @@ for i in range(4):
     name = input(f'{ru.NAME} {i+1}->')
     names.append(name)
 
-health = 3
-force = 5
 print(ru.INITIAL_INFO)
-print(f'{ru.RESOURCES}:\n{ru.HEALTH} {health}\n{ru.FORCE} {force}')
+print(f'{ru.RESOURCES}:\n{ru.HEALTH} 3\n{ru.FORCE} 5')
 
 act1 = []
 for i in names:
@@ -24,22 +22,3 @@ for i in names:
 def random_granny():
     rand_granny = random.choice([1, 2])
     return rand_granny
-
-def room_3():
-    print(f'{ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
-    act = int(input(f'{ru.ACT}->'))
-    if act == 1:
-        print(f'{ru.MEDICINE}')
-        helth += 1
-        if helth > 3:
-            helth = 3
-    else:
-        print(f'{ru.EMPTY}')
-
-
-
-
-
-
-
-
