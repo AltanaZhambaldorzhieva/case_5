@@ -19,3 +19,4 @@ print(f'{player3}, {ru.CHOOSE}:\n1.{ru.DOWN}\n2.{ru.GO}\n3.{ru.ENTER}')
 act3 = int(input(f'{ru.ACT}->'))
 print(f'{player4}, {ru.CHOOSE}:\n1.{ru.DOWN}\n2.{ru.GO}\n3.{ru.ENTER}')
 act4 = int(input(f'{ru.ACT}->'))
+
