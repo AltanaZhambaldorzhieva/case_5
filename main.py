@@ -187,7 +187,7 @@ for i in names:
 for name in names:
     if act1[names.index(name)] == 1:
         n1 = random.randint(1, 5)
-        if floor_1() >= n1:
+        if floor_1(name) >= n1:
             print(ru.CONTINGENCY)
             print(ru.FIGHT)
             print(f'{ru.GRANNY_FORCE}: {n1}\n{ru.WINNER_FORCE}')
@@ -199,7 +199,7 @@ for name in names:
             print(ru.LOSER)
     else:
         n2 = random.randint(1, 5)
-        if floor_2() >= n2:
+        if floor_2(name) >= n2:
             print(ru.CONTINGENCY)
             print(ru.FIGHT)
             print(f'{ru.GRANNY_FORCE}: {n2}\n{ru.WINNER_FORCE}')
