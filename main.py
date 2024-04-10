@@ -173,17 +173,28 @@ for i in names:
     act1.append(action1)
 
 for i in act1:
+
     if i == 1:
-        if floor_1() >= random.randint(0, 5):
+        n1 = random.randint(0, 5)
+        if floor_1() >= n1:
             print(ru.CONTINGENCY)
+            print(ru.FIGHT)
+            print(f'{ru.GRANNY_FORCE}: {n1}\n{ru.WINNER_FORCE}')
             print(ru.WINNER)
         else:
             print(ru.CONTINGENCY)
+            print(ru.FIGHT)
+            print(f'{ru.GRANNY_FORCE}: {n1}\n{ru.LOSER_FORCE}')
             print(ru.LOSER)
     else:
-        if floor_2() >= random.randint(0, 5):
+        n2 = random.randint(0, 5)
+        if floor_2() >= n2:
             print(ru.CONTINGENCY)
+            print(ru.FIGHT)
+            print(f'{ru.GRANNY_FORCE}: {n2}\n{ru.WINNER_FORCE}')
             print(ru.WINNER)
         else:
             print(ru.CONTINGENCY)
+            print(ru.FIGHT)
+            print(f'{ru.GRANNY_FORCE}: {n2}\n{ru.LOSER_FORCE}')
             print(ru.LOSER)
