@@ -168,7 +168,7 @@ print(f'{ru.RESOURCES}:\n{ru.HEALTH} 3\n{ru.FORCE} 5')
 
 act1 = []
 for i in names:
-    print(f'{i}, {ru.CHOOSE}:\n1.{ru.DOWN}\n2.{ru.GO}\n3.{ru.ENTER}')
+    print(f'{i}, {ru.CHOOSE}:\n1.{ru.DOWN1}\n2.{ru.DOWN2}')
     action1 = int(input(f'{ru.ACT}->'))
     act1.append(action1)
 
