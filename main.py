@@ -102,7 +102,7 @@ def floor_2(n):
                 exit()
             else:
                 print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                        f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                      f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
         print(f'{n}, {ru.CHOOSE}:\n1.{ru.GO_TO_ROOM_1}\n2.{ru.GO_TO_ROOM_2}')
         act_1 = int(input(f'{ru.ACT}->'))
         if act_1 == 1:
@@ -126,7 +126,7 @@ def floor_2(n):
                     exit()
                 else:
                     print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                            f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                          f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             print(f'{n}, {ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_3}')
             act_4 = int(input(f'{ru.ACT}->'))
             if act_4 == 1:
@@ -138,15 +138,13 @@ def floor_2(n):
                         exit()
                     else:
                         print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
-                                f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
+                              f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             else:
                 print(f'{n}, {ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
                 act_5 = int(input(f'{ru.ACT}->'))
                 if act_5 == 1:
                     print(f'{ru.MEDICINE}')
                     health += 1
-                    if health > 3:
-                        health = 3
                 else:
                     print(f'{ru.EMPTY}')
         else:
@@ -163,8 +161,6 @@ def floor_2(n):
         if act_5 == 1:
             print(f'{ru.MEDICINE}')
             health += 1
-            if health > 3:
-                health = 3
     return force
 
 
