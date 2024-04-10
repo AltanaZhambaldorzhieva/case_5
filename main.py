@@ -91,16 +91,20 @@ def floor_2():
     """
     health = 3
     force = 5
+    spray = 0
     for k in names:
         print(f'{k}, {ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.ENTER}')
         act = int(input(f'{ru.ACT}->'))
         if act == 1:
             if random_granny() == 2:
-                print(f'{ru.OH_OH}')
                 health -= 1
                 force -= 2
-                if health <= 0:
+                if health == 0:
                     print(f'{ru.DEATH}')
+                    exit()
+                else:
+                    print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                          f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
             print(f'{k}, {ru.CHOOSE}:\n1.{ru.GO_TO_ROOM_1}\n2.{ru.GO_TO_ROOM_2}')
             act_1 = int(input(f'{ru.ACT}->'))
             if act_1 == 1:
@@ -110,26 +114,33 @@ def floor_2():
                     print(ru.EMPTY)
                 else:
                     print(ru.SPRAY)
+                    spray += 1
             else:
                 print(ru.EMPTY)
             print(f'{k}, {ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_1}')
             act_3 = int(input(f'{ru.ACT}->'))
             if act_3 == 1:
                 if random_granny() == 2:
-                    print(f'{ru.OH_OH}')
                     health -= 1
                     force -= 2
-                    if health <= 0:
+                    if health == 0:
                         print(f'{ru.DEATH}')
+                        exit()
+                    else:
+                        print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                              f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
                 print(f'{k}, {ru.CHOOSE}:\n1.{ru.GO}\n2.{ru.GO_TO_ROOM_3}')
                 act_4 = int(input(f'{ru.ACT}->'))
                 if act_4 == 1:
                     if random_granny() == 2:
-                        print(f'{ru.OH_OH}')
                         health -= 1
                         force -= 2
-                        if health <= 0:
+                        if health == 0:
                             print(f'{ru.DEATH}')
+                            exit()
+                        else:
+                            print(f'{ru.GRANNY_BAD}\n{ru.RESOURCES}'
+                                  f'\n{ru.HEALTH}: {health} \n{ru.FORCE}: {force}')
                 else:
                     print(f'{k}, {ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
                     act_5 = int(input(f'{ru.ACT}->'))
@@ -147,6 +158,7 @@ def floor_2():
                     print(f'{ru.EMPTY}')
                 else:
                     print(f'{ru.SPRAY}')
+                    spray += 1
         else:
             print(f'{k}, {ru.CHOOSE}:\n1.{ru.OPEN_WARDROBE}\n2.{ru.OPEN_BAG}')
             act_5 = int(input(f'{ru.ACT}->'))
