@@ -184,8 +184,8 @@ for i in names:
     action1 = int(input(f'{ru.ACT}->'))
     act1.append(action1)
 
-for i in act1:
-    if i == 1:
+for name in names:
+    if act1[names.index(name)] == 1:
         n1 = random.randint(1, 5)
         if floor_1() >= n1:
             print(ru.CONTINGENCY)
