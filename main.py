@@ -175,8 +175,10 @@ for i in names:
 for i in act1:
     if i == 1:
         if floor_1() >= random.randint(0, 5):
+            print(ru.CONTINGENCY)
             print(ru.WINNER)
         else:
+            print(ru.CONTINGENCY)
             print(ru.LOSER)
     else:
         if floor_2() >= random.randint(0, 5):
