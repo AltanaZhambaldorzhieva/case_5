@@ -7,7 +7,7 @@ import random
 
 def random_granny():
     """
-        The function returns random generation of granny location floor
+        The function returns random generation of granny's location (floor)
     """
     rand_granny = random.choice([1, 2])
     return rand_granny
